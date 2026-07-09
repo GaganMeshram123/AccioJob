@@ -597,35 +597,35 @@
 
 
 
-function input(str1,st2){
-   let result1 = {};
-   let result2 ={};
+// function input(str1,st2){
+//    let result1 = {};
+//    let result2 ={};
   
-  for(let i = 0 ; i < str1.length ;i++){
-    if(str1[i] in result1 == false){
-      result1[str1[i]] = 1;
-    }
-    else{
-      result1[str1[i]]++;
-    }
-  }
+//   for(let i = 0 ; i < str1.length ;i++){
+//     if(str1[i] in result1 == false){
+//       result1[str1[i]] = 1;
+//     }
+//     else{
+//       result1[str1[i]]++;
+//     }
+//   }
 
- for(let i = 0 ; i < st2.length ; i++){
-  if(st2[i] in result2== false){
-     result2[st2[i]] = 1;
-    }
-    else{
-      result2[st2[i]]++;
-    }
-  }
+//  for(let i = 0 ; i < st2.length ; i++){
+//   if(st2[i] in result2== false){
+//      result2[st2[i]] = 1;
+//     }
+//     else{
+//       result2[st2[i]]++;
+//     }
+//   }
 
-  if(result1.equals(result2)){
-     return "anagram";
-  }else{
-    return "not anagram";
-  }
-}
-console.log(input("gagan","angag"))
+//   if(result1.equals(result2)){
+//      return "anagram";
+//   }else{
+//     return "not anagram";
+//   }
+// }
+// console.log(input("gagan","angag"))
 
 
 
@@ -655,6 +655,31 @@ console.log(input("gagan","angag"))
 //     { name: "Pankaj", department: "IT", marks: 100 }
 // ];
 
+// let result = {};
+// for(let i = 0 ; i <students.length ; i++){
+//   if(students[i].department in result){
+//       result[students[i].department] ={totalmarks:totalmarks + students[i].marks , studentCount:studentCount +1, averageMarks: students[i].marks +students[i].marks/2 }
+//   }else{
+//       result[students[i].department] = {totalmarks:students[i].marks,studentCount:1 ,averageMarks:students[i].marks};//asach honar ithe
+//   }
+// }
+// {
+//     IT: {
+//         totalMarks: 270,
+//         studentCount: 3,
+//         averageMarks: 90
+//     },
+//     HR: {
+//         totalMarks: 100,
+//         studentCount: 2,
+//         averageMarks: 50
+//     },
+//     Finance: {
+//         totalMarks: 70,
+//         studentCount: 1,
+//         averageMarks: 70
+//     }
+// }
 
 // let obj ={
 
@@ -667,5 +692,24 @@ console.log(input("gagan","angag"))
 //      }
 //      else{
 //         obj[stu.department]={totalMarks:stu.marks,studentCount:1,average:stu.marks};
+//         // obj[IT]
 //      }
 // }
+
+
+//to_lowercase kela
+//split kela
+//sort 
+//join kela
+
+// function input(str1,str2){
+//    str1 = str1.toLowerCase().split(" ").sort().join(" ");
+//    str2 = str1.toLowerCase().split(" ").sort().join(" ");
+//    if(str1 == str2){
+//     return "anagram";
+//    }
+//    else{
+//     return "not";
+//    }
+// }
+// console.log(input("gagan","angag"))

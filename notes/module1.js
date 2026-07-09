@@ -155,9 +155,9 @@ Math.floor() → Floor (Down ⬇️)
 Math.ceil()  → Ceiling (Up ⬆️)
 ***********************************************************************/
 
-console.log(Math.round(4.6)); // 5
+console.log(Math.round(4.4)); // 5
 
-console.log(Math.floor(4.9)); // 4
+console.log(Math.floor(4.5)); // 4
 
 console.log(Math.ceil(4.1)); // 5
 
