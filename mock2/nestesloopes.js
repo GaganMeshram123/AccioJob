@@ -405,27 +405,179 @@
 
 // console.log(obj);
 
-let b = "12344555";
-let a =b.split("")
-let result = {};
-for(let i = 0 ; i < a.length ; i++){
-    if(a[i] in result == false){
-        result[a[i]] = 1;
-    }
-    else{
-        result[a[i]]++;
-    }
-}
+// let b = "12344555";
+// let a =b.split("")
+// let result = {};
+// for(let i = 0 ; i < a.length ; i++){
+//     if(a[i] in result == false){
+//         result[a[i]] = 1;
+//     }
+//     else{
+//         result[a[i]]++;
+//     }
+// }
 
-let maximum = 0;
-let second = 0;
-for(let key in result){
-    if(key > maximum){
-        second = maximum;
-        maximum = key;
+// let maximum = 0;
+// let second = 0;
+// for(let key in result){
+//     if(key > maximum){
+//         second = maximum;
+//         maximum = key;
          
-    }
-}
-console.log(second);
-console.log(maximum);
-console.log(result);
+//     }
+// }
+// console.log(second);
+// console.log(maximum);
+// console.log(result);
+
+
+// let arr = [2,3,4,56,3,3,5,6];
+// let maximum = 0;
+// let second = 0;
+// for(let i = 0; i <arr.length ;i++){
+//     if(arr[i] > maximum){
+//         second = maximum;
+//         maximum = arr[i];
+//     }
+// }
+// console.log(second);
+// console.log(maximum);
+
+//123
+
+//reversing the number 
+// let n = 12345;
+// let reverse = 0;
+// while(n>0){
+//     let last_digit = n%10;
+//     reverse = reverse *10 + last_digit ; 
+//     n = Math.floor(n/10);    
+// }
+// console.log(reverse)
+
+
+// let matrix = [
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9]
+// ];
+// //row sathi apan bolu shakton 
+// for(let i = 0; i < matrix.length ; i++){
+//     for(let j = 0 ; j < matrix[i].length ;j++){
+//         console.log(matrix[i][j]);
+//     }
+// }
+// console.log(matrix[2][2]);
+
+
+
+// let matrix = [
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9]
+// ];
+
+// let target =0;
+// for(let i = 0 ; i < matrix.length ; i++){
+// //  for(let j = 0 ; j < matrix[i].length ;j++){
+//         console.log(matrix[i][target]);
+// //   }  
+// }
+
+//column wise kadhaych ahe then 
+
+
+// let matrix = [
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9]
+// ];
+
+// for(let col = 0 ; col < matrix[0].length ; col++){
+//     console.log(`--output${col}--`);
+//     for(let row = 0 ; row < matrix.length ; row++){
+//         console.log(matrix[row][col]);
+//     }
+// }
+
+//hum traverse karenge loop se;
+
+//Sum of all elements.
+
+
+// let matrix = [
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9]
+// ];
+
+// let sum = 0 ;
+// for(let i = 0 ; i< matrix.length ; i++){
+//     for(let j = 0 ; j < matrix[0].length ; j++){
+//       sum += (matrix[i][j]);
+//     }
+// }
+// console.log(sum);
+
+// let obj = { '1' : 1 , '2': 2, '3': 3, '4': 4, };
+// let res = [];
+// for(let key in obj){
+//     res.push({[key]:obj[key]});
+//     // res.push(obj);
+
+// }
+// console.log(res);
+// let maximum = 0;
+// let second = 0;
+// for(let i = 0 ; i < res.length ; i++){
+//     if(res[i] > maximum){
+//         second = maximum
+//         maximum =  res[i];
+//     }
+// }
+// console.log(second);
+// console.log(maximum);
+
+// h = 5 , k = 3
+//i have to derive the formula 
+//for the first hr if its 1;
+
+// //h
+// function input(h,k){
+// //   if(h == 1 ){
+// //     return 1;
+// //   }
+//   let total = 1;
+//   for(let i = 2 ; i <= h ; i++){
+//      total = total + (total*k) ;
+//      retur;
+//   }
+// }
+// console.log(input(7,8));
+
+
+//fizz buzz;
+// let number = 3;
+// if(number%5 == 0 && number%3 == 0){
+//     console.log("fizz & buzz");
+// }
+// else if(number%5 == 0){
+//     console.log("buzz");
+// }
+// else{
+//     console.log("fizz");
+// }
+
+// let digit = number % 10;
+// n = Math.floor(n/10);
+
+// while(number>0){
+//     if(number[i] == 3){
+//         console.log("fizz");
+//     }else if(number[i] == 5){
+//         console.log("buzz");
+//     }
+//     else{
+//         console.log("fizz buzz");
+//     }
+// }
