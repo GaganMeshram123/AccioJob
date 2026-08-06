@@ -265,3 +265,4 @@
 //   sub.push(arr.slice(i,i+2));//
 // }
 // console.log(sub);
+ 

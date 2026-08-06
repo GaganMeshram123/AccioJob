@@ -451,3 +451,99 @@
 // }
 
 //how can i find out the last occorances of the
+//actually i want to find out the last occrances of the matrix
+// let arr = [1, 2, 2, 2, 3, 4, 5];
+// let target = 2;
+
+// let l = 0 ;
+// let r = arr.length-1 ;
+// let ans = -1;
+// //i am thinking how i can do these 
+// while(l<=r) {
+//     let mid =Math.floor((l+r)/2);
+//     if(arr[mid] == target){
+//         ans =mid;
+//         l = mid+1;
+//     }
+
+//     else if(arr[mid] < target){
+//          ans = mid;
+//          l = mid+1;
+        
+//     }
+//     else{
+//         ans = mid
+//         r = mid-1;
+//     }
+// }
+// console.log(ans);
+
+// let arr = [4, 5, 6, 7, 0, 1, 2];
+// let target = 0;
+
+// function input(arr,target){
+//     let l = 0 ;
+//     let r = arr.length - 1;
+//     let ans = -1;
+//     while(l<=r){
+//         let mid = Math.floor((l+r)/2);
+//         if(arr[mid] == target){
+//           return yes;
+//         }
+//         else if(arr[l] <= arr[mid]){
+             
+//              l = mid+1;
+//             // if()
+//         }
+//         else{
+//          r = mid-1;
+// }
+//     }
+
+// }
+// console.log(input([4, 5, 6, 7, 0, 1, 2] , 0))
+
+// let arr = [2, 5, 8, 12, 16, 23, 38];
+// let target = 16;
+
+// let l = 0;
+// let r = arr.length-1;
+// while(l<=r){
+//    let mid = Math.floor((l+r)/2);
+//    if(arr[mid] == target){
+//     console.log(mid);
+//     break;
+//    }else if(arr[mid] < target){
+//      l = mid+1;
+//    }
+//    else{
+//     r =mid-1
+//    }
+// }
+
+//its crazy if the number doesnt 
+
+// 🟢 Question 2: Search Insert Position
+
+// Given a sorted array and a target, return:
+
+// the index if the target exists.
+// otherwise, return the index where it should be inserted to keep the array sorted.
+// Example 1
+
+function input(arr,target){
+   let l = 0 ;
+   let r = arr.length -1;
+   let ans = -1;
+   while(l<=r){
+    let mid = Math.floor((l+r)/2);
+    if(arr[mid]>target){
+        ans = mid
+        r =mid-1;
+    }
+    else{
+        l = mid+1
+    }
+   }
+}
+console.log(input([1,3,4,5,6],2));
