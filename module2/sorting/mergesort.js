@@ -83,45 +83,145 @@
 // console.log(temp)
 
 
-let arr = [1,5,2,11,4,5,6];
+// let arr = [1,5,2,11,4,5,6];
+// function mergesort(arr,low,mid,high){
+//    //two unsorted array la karaych ahe
+//    let first = low;
+//    let second = mid+1;
+//    let result = [];
+//    while(first <= mid && second <= high){
+//       if(first < second){
+//         result.push(arr[first]);
+//         first++;
+//       }else{
+//         result.push(arr[second]);
+//         second++;
+//       }
+//    }
+//    while(first <= mid){
+//     result.push(arr[first]);
+//     first++
+//    }
+//    while(second <= high){
+//     result.push(arr[second]);
+//     second++;
+//    }
+
+//     for(let i = low ; i<=high ; i++){
+//         arr[i] = result[i-low];
+//     }
+// }
+
+// function divide(arr,low, high){
+//     if(low>=high){
+//         return;
+//     }
+//     let mid = Math.floor((low+high)/2);
+//     divide(arr,low,mid);
+//     divide(arr,mid+1,high);
+//     mergesort(arr,low,mid,high);
+// }
+
+// console.log(divide(arr,0,arr.length));
+
+
+// flowchart
+// Start
+//    │
+//    ▼
+// Initialize:
+// first = 0
+// second = 0
+// res = []
+//    │
+//    ▼
+// Is first < arr1.length
+// AND
+// second < arr2.length ?
+//    │
+//  ┌─Yes──────────────────────────────┐
+//  │                                  │
+//  ▼                                  │
+// Compare                          No ▼
+// arr1[first] <= arr2[second] ?   Exit loop
+//  │
+//  ├──────────────┐
+//  │Yes           │No
+//  ▼              ▼
+// Push            Push
+// arr1[first]     arr2[second]
+//  │              │
+// first++         second++
+//  │              │
+//  └───────Go back to condition───────┘
+
+// After loop
+
+// Is first < arr1.length ?
+//       │
+//    Yes│
+//       ▼
+// Push arr1[first]
+// first++
+// Repeat until false
+
+//       │
+//       ▼
+// Is second < arr2.length ?
+//       │
+//    Yes│
+//       ▼
+// Push arr2[second]
+// second++
+// Repeat until false
+
+//       │
+//       ▼
+// Print res
+//       │
+//       ▼
+// End
+
+//we will design now bc 
+// each and every thin
 function mergesort(arr,low,mid,high){
-   //two unsorted array la karaych ahe
-   let first = low;
-   let second = mid+1;
-   let result = [];
-   while(first <= mid && second <= high){
-      if(first < second){
-        result.push(arr[first]);
+    let first = low;
+    let second = mid+1;
+    let res =[];
+    while(first <= mid && second <= high){
+        if(arr[first]<=arr[second]){
+            res.push(arr[first]);
+            first++;
+        }
+        else{
+            res.push(arr[second]);
+            second++;
+        }
+    }
+    while(first<= mid){
+        res.push(arr[first]);
         first++;
-      }else{
-        result.push(arr[second]);
+    }
+    while(second <= high){
+        res.push(arr[second]);
         second++;
-      }
-   }
-   while(first <= mid){
-    result.push(arr[first]);
-    first++
-   }
-   while(second <= high){
-    result.push(arr[second]);
-    second++;
-   }
-
+    }
     for(let i = low ; i<=high ; i++){
-        arr[i] = result[i-low];
+        arr[i] = res[i-low];
     }
+
 }
+let arr = [1,2,3,4,1,2,1,1,3];
 
-function divide(arr,low, high){
-    if(low>=high){
-        return;
-    }
-    let mid = Math.floor((low+high)/2);
-    divide(arr,low,mid);
-    divide(arr,mid+1,high);
-    mergesort(arr,low,mid,high);
-}
+function divde(arr,low,high){
+  if(low>=high){
+    return;
+  }
+  let mid = Math.floor((low+high)/2);
+  divde(arr,low,mid);
+  divde(arr,mid+1,high)
+  mergesort(arr,low,mid,high);
+}//lets divide this first 
 
-console.log(divide(arr,0,arr.length));
-
-//quick sort
+divde(arr,0,arr.length-1);
+console.log(arr);

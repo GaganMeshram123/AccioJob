@@ -1,0 +1,51 @@
+recursion,-done 
+map-filter-reduce-done
+matrix
+sorting- insertion,selection,mergesort - done two remaining 
+pattern 
+binary,linear
+map-set 
+callback,higherorder
+timeandspace complexity 
+
+
+Day/Session 1
+│
+├── 1. Print array
+├── 2. Reverse print
+├── 3. Sum
+├── 4. Minimum
+└── 5. Maximum
+
+Day/Session 2
+│
+├── 6. Count even
+├── 7. Count odd
+├── 8. Search element
+├── 9. Find index
+└── 10. Count occurrences
+
+Day/Session 3
+│
+├── 11. Sorted?
+├── 12. Reverse array
+└── 13. Palindrome
+
+Day/Session 4
+│
+├── 14. Second largest
+├── 15. First occurrence
+├── 16. Last occurrence
+└── 17. Remove occurrences
+
+// SUM
+return arr[i] + recursiveCall();
+
+// MIN
+return Math.min(arr[i], recursiveCall());
+
+// MAX
+return Math.max(arr[i], recursiveCall());
+
+// COUNT
+return 1 + recursiveCall();

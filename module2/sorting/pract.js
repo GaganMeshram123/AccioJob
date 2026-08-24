@@ -108,6 +108,36 @@
 //     console.log(str);
 // }
 
+//diamond 
+// Upper Half
+// for(let i = 0; i < n; i++){
+//     let str = "";
+
+//     for(let j = 0; j < n - i - 1; j++){
+//         str += " ";
+//     }
+
+//     for(let j = 0; j < 2 * i + 1; j++){
+//         str += "*";
+//     }
+
+//     console.log(str);
+// }
+
+// // Lower Half
+// for(let i = 1; i < n; i++){
+//     let str = "";
+
+//     for(let j = 0; j < i; j++){
+//         str += " ";
+//     }
+
+//     for(let j = 0; j < 2 * (n - i) - 1; j++){
+//         str += "*";
+//     }
+
+//     console.log(str);
+// }
 
 // ✅ Print Matrix
 // ✅ Row-wise Sum
@@ -415,3 +445,34 @@
 //   if(arr.length == )
 // }
 // console.log(max([2,1,4,56,6,0]));
+
+
+
+//lets understand -> 
+//how i can merge two sorted arry 
+let arr1 = [2,4,5,6,6,2];
+let arr2 = [1,2,3,4,5,6];
+let first = 0 ;
+let second = 0;
+let res =[];
+
+while(first<arr1.length && second < arr2.length){
+    if(arr2[second] >= arr1[first]){
+        res.push(arr1[first]);
+        first++;
+    }
+    else{
+        res.push(arr2[second]);
+        second++;
+    }
+}
+//if the array length is not equal
+while(first < arr1.length){
+    res.push(arr1[first]);
+    first++;
+}
+while(second < arr2.length){
+    res.push(arr2[second]);
+    second++
+}
+console.log(res);
