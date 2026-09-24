@@ -1,0 +1,69 @@
+1. The Disappearing Product Card
+You are building a shopping page:
+<div class="products">
+
+    <div class="product">
+     <h3>Wireless Headphones</h3>
+    <p>₹1999</p>
+    <button class="remove">Remove</button>
+        </div>
+
+<div class="product">
+        <h3>Mechanical Keyboard</h3>
+        <p>₹2999</p>
+        <button class="remove">Remove</button>
+        </div>
+
+</div>
+A developer has already added one click listener to .products.
+Your task:
+When the user clicks Remove, only that particular product should disappear.
+Rules
+You cannot add listeners to individual buttons.
+You cannot use IDs.
+The solution should continue working if 50 more products are added dynamically.
+Think about:
+Where did the click happen?
+↓
+Which product contains that element?
+↓
+Remove that product[4:13 PM]1. The Disappearing Product Card
+You are building a shopping page:
+<div class="products">
+
+       <div class="product">
+        <h3>Wireless Headphones</h3>
+        <p>₹1999</p>
+        <button class="remove">Remove</button>
+         </div>
+
+      <div class="product">
+        <h3>Mechanical Keyboard</h3>
+           <p>₹2999</p>
+        <button class="remove">Remove</button>
+        </div>
+
+</div>
+<script>
+    let products = document.querySelector(".products");
+    if(event.target.matches(".remove"){
+products.addEventListener("click", function(event){
+     let product = event.target.closest(".product")
+     product.remove();
+    })
+    })
+     
+</script>
+A developer has already added one click listener to .products.
+Your task:
+When the user clicks Remove, only that particular product should disappear.
+Rules
+You cannot add listeners to individual buttons.
+You cannot use IDs.
+The solution should continue working if 50 more products are added dynamically.
+Think about:
+Where did the click happen?
+↓
+Which product contains that element?
+↓
+Remove that product

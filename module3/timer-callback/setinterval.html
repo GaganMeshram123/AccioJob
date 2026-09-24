@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification</title>
+
+    <style>
+        .notification {
+            display: none;
+        }
+
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="show-notification">
+        Show Notification
+    </button>
+
+    <button class="cancel">
+        cancel
+    </button>
+
+    <ul class="notification">
+        
+        <li>Rakesh enrolled in course</li>
+        <li>Rakesh logged in to the course</li>
+    </ul>
+    <!-- <script>
+        setTimeout(() => {
+        console.log("code executed after 2s")
+        }, 2000);
+    </script> -->
+
+    <script>
+        let notification = document.querySelector(".notification");
+        let button = document.querySelector(".show-notification");
+
+        let cancel = document.querySelector(".cancel");
+
+        button.addEventListener("click", function () {
+                notification.classList.toggle("show");
+                 setTimeout(() => {
+        console.log("code executed after 2s");
+        }, 2000);
+        });
+
+        cancel.addEventListener("click", function () {
+                notification.classList.remove("show");
+        });
+
+    </script>
+
+</body>
+
+</html>

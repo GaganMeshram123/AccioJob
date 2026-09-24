@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle</title>
+
+    <style>
+        .dark {
+            background-color: beige;
+            color: white;
+        }
+
+        .light {
+            background-color: aliceblue;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <select class="theme">
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+    </select>
+
+    <script>
+        let themehandle = document.querySelector(".theme");
+        let body = document.querySelector("body");
+
+        body.className = "light";
+
+        themehandle.addEventListener("change", function(event) {
+
+            let className = event.target.value;
+
+            body.className = className;
+        });
+             localstorage.setItem
+    </script>
+     
+</body>
+</html>
+
+
+<!-- let body = document.querySelector("body");
+
+let theme = localStorage.getItem("theme") || "light";
+
+body.className = theme;
+
+themeHandle.addEventListener("change", function(event) {
+
+    theme = event.target.value;
+
+    body.className = theme;
+
+    localStorage.setItem("theme", theme);
+}); -->
+
+
+//let user ={
+    id: 1;
+    usernmae:"rohit",
+    age: 20
+}
+//cant save object directly in the storage
+localstorage.setItem("user",user);
+
+//json stringify()
+//converts the object to json stringify
+
+conole.log(JSON.stringify(user));
+localstorage.setItem
+<!-- 
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Step Form</title>
+</head>
+
+<body>
+
+    <!-- STEP 1 -->
+    <div id="step1">
+        <h2>Personal Details</h2>
+
+        <input id="name" placeholder="Enter name"> <br><br>
+        <input id="email" placeholder="Enter email"> <br>
+          <br>
+        <button onclick="nextStep()">Next</button>
+    </div>
+
+
+    <!-- STEP 2 -->
+    <div id="step2" style="display: none;">
+        <h2>Education</h2>
+
+        <input id="education" placeholder="Enter education">
+
+        <button onclick="submitForm()">Submit</button>
+    </div>
+
+
+    <script>
+
+
+
+
+        // Move to next step
+        function nextStep() {
+
+            // Show Step 2
+            document.querySelector("#step1").style.display = "none";
+            document.querySelector("#step2").style.display = "block";
+        }
+
+
+        // Submit
+        function submitForm() {
+
+            formData.education =
+                document.querySelector("#education").value;
+
+
+        }
+
+    </script>
+
+</body>
+
+</html> -->

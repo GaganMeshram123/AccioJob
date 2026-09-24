@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+
+<body>
+
+    <ul class="notification">
+    </ul>
+    <script>
+        let notiElement = document.querySelector(".notification");
+
+        const notifications = [
+            {
+                id: 1,
+                message: "Rakesh enrolled in JavaScript course"
+            },
+            {
+                id: 2,
+                message: "Priya completed the HTML assignment"
+            },
+            {
+                id: 3,
+                message: "Amit submitted a new project"
+            },
+            {
+                id: 4,
+                message: "Sneha logged into the course"
+            },
+            {
+                id: 5,
+                message: "Rahul completed the CSS module"
+            }
+        ];
+
+    let index = 0;
+
+    let interval = setInterval(() => {
+
+        let li = document.createElement("li");
+
+        li.innerText = notifications[index].message;
+
+        notiElement.appendChild(li);
+
+        index++;
+
+        if (index === notifications.length) {
+            clearInterval(interval);
+        }
+
+    }, 2000);
+
+    </script>
+
+</body>
+
+</html>
+
+//call function -> function that is passed as an argumnet to the another function 
+
+//placeorder();
+//nested callback -> function inside the callback function 
