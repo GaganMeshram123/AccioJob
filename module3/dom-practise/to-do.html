@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <h1>My To-Do List</h1>
+
+    <form>
+        <input type="text" id="inputid" placeholder="Enter your task">
+        <button type="submit" id="buttonid">Add Task</button>
+    </form>
+
+    <ul id="tasklist"></ul>
+
+    <script>
+        // Select elements
+        let inputid = document.querySelector("#inputid");
+        let buttonid = document.querySelector("#buttonid");
+        let tasklist = document.querySelector("#tasklist");
+
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        let editingtask = null;
+
+        function savetask(){
+          localStorage.setItem("task",JSON.stringify(tasks))
+        }
+        // Add task
+        buttonid.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            let taskvalue = inputid.value.trim();
+
+            // Don't add an empty task
+            if (taskvalue === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            // Create list item
+            let listele = document.createElement("li");
+
+            // Create task text
+            let tasktext = document.createElement("span");
+            tasktext.textContent = taskvalue;
+
+            // Create Edit button
+            let editbtn = document.createElement("button");
+            editbtn.textContent = "Edit";
+            editbtn.type = "button";
+
+            // Create Remove button
+            let removebtn = document.createElement("button");
+            removebtn.textContent = "Remove";
+            removebtn.type = "button";
+
+            // Edit task
+            editbtn.addEventListener("click", function() {
+                inputid.value = tasktext.textContent;
+                inputid.focus();
+                listele.remove();
+            });
+
+            // Remove task
+            removebtn.addEventListener("click", function() {
+                listele.remove();
+            });
+
+            // Add elements to the list item
+            listele.append(tasktext, " ", editbtn, " ", removebtn);
+
+            // Add list item to the webpage
+            tasklist.append(listele);
+
+            // Clear input
+            inputid.value = "";
+        });
+    </script>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do list</title>
+</head>
+<body>
+    <h1> my to-do list </h1>
+    <input id="inputid" placeholder="Enter your task" >
+    <button id="buttonid" >add task</button>
+    <ul id="tasklist"></ul>'
+    //yahi to hai unordered list 
+
+    <script>
+        //selecting the css selector
+        let inputid = document.querySelector("#inputid");
+        let buttonid = document.querySelector("#buttonid");
+        let tasklist = document.querySelector("#tasklist");
+
+        //this wont come on the website until i add this 
+        buttonid.addEventListener("click",function(event){
+          event.preventDefault();
+        //   console.log("button is clicked");
+        let taskvalue = inputid.value;//user value
+        let listele = document.createElement("li");//create4
+
+        let tasktext = document.createElement("span");
+        tasktext.textContent = taskvalue;
+
+
+         let editbtn = document.createElement("button");
+        editbtn.textContent = "Edit";
+
+        let removebtn = document.createElement("button");
+        removebtn.textContent = "remove"
+        
+
+         removebtn.addEventListener("click",function(){
+            listele.remove();//ha pn ek eventch ahe bc
+        })
+
+          editbtn.addEventListener("click",function(){
+            inputid.value = tasktext.textContent;
+            //puts the existing task text into the input box            
+            listele.remove();
+        })
+
+        
+        listele.append(tasktext,editbtn,removebtn);
+        tasklist.append(listele);
+                  
+        inputid.value = "";
+
+        })
+
+
+        
+        //lets go for the next 
+        //get the input value 
+        //gets the text entered by the user 
+        
+    </script>
+</body>
+</html> -->

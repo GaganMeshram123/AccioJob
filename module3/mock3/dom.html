@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>     
+    
+let grandparent = document.querySelector("#grandparent");
+let parent = document.querySelector("#parent");
+let child = document.querySelector("#child");
+
+grandparent.addEventListener("click", function() {
+    console.log("Grandparent");
+});
+
+parent.addEventListener("click", function() {
+    console.log("Parent");
+});
+
+child.addEventListener("click", function() {
+    console.log("Child");
+});
+    </script>
+ </body>
+ </html>

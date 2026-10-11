@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="gagan">
+
+    <script>
+    let gagan = document.querySelector("#gagan");
+    function debounce(callback,delay){
+        let timer;
+
+        return function(event){
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                callback(event);
+            }, delay);
+        }
+    }
+    function searchhandler(event){
+        console.log(event.target.value);
+    }
+     debouncehandler = debounce(searchhandler,1000);
+     gagan.addEventListener("input",debouncehandler);
+    //      let gagan = document.querySelector("#gagan");
+    //      let timer;
+
+    //     function searchUser(event){
+    //       clearTimeout(timer);
+
+    //       timer = setTimeout(() => {
+    //         console.log(event.target.value);
+    //       }, 2000);
+    //     } 
+
+    //    gagan.addEventListener("input",searchUser)
+
+    </script>
+    
+</body>
+</html>

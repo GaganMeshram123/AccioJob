@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .gagan {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        div {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>products</h1>
+    <div class="container"></div>
+
+
+    <script>
+        async function fetchapi() {
+            try {
+                let responce = await fetch("https://dummyjson.com/products");
+                let data = await responce.json();
+
+                let products = data.products;
+                
+                //lets present on the webpage 
+                let container = document.createElement("div");
+                
+                container.classList.add("container")  
+                container.classList.replace("container","gagan");
+                //classname diya because of the we need to access this into the class 
+                
+                products.forEach(product => {
+                    let img = document.createElement("img")
+                    let title = document.createElement("p");
+                    let div = document.createElement("div");
+
+
+                    img.setAttribute("src",product.thumbnail);
+                    title.innerText = product.title //value dhalne ke liye hota hai 
+                    document.body.append(img,title);
+                    container.append(div);
+                });
+                
+
+                // products.forEach(product => {
+
+                //     let img = document.createElement("img");
+
+                //     img.setAttribute("src", product.thumbnail);
+
+                //     document.body.append(img)
+                // });
+
+
+                 //taught by bikas 
+                // let container = document.createElement("div");
+                // container.classList.add("container");
+
+
+                // products.forEach(product => {
+
+                //     let img = document.createElement("img");
+                //     let title = document.createElement("p");
+                //     let div = document.createElement("div");
+
+                //     img.setAttribute("src", product.thumbnail);
+                //     title.innerText = product.title;
+
+                //     div.append(img, title);
+
+                //     container.append(div);
+                    
+                // });
+
+
+                // document.body.append(container)
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }
+
+        fetchapi();
+    </script>
+</body>
+
+</html>

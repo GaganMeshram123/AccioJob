@@ -1,0 +1,89 @@
+<!-- Q74. How do you store an object in localStorage? -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <h1 id="gagan"></h1>; -->
+
+ <!-- <button id="increase">+</button>;
+ <h2 id="count">0</h2>; -->
+<h2>My to do list</h2>
+<form if="my-form"> 
+    <input type="text" id="todo-input" placeholder="enter a new task">
+    <button type="submit" >add task</button>
+</form>
+<!-- where my task will be displayed; -->
+<ul id="todo-list"></ul>
+<body>
+    <script>
+        let form = document.querySelector("#my-form");
+        let input = document.querySelector("#todo-input");
+        let button = document.querySelector("#submit")
+
+        //adhi tr load karav lagel 
+        let tasks = JSON.parse(localStorage.getItem("mytasks")) || [];
+
+        function rendertask(){
+            listContainer.innerHTML = "";
+            tasks.forEach(function(tasksText,index){
+                let li= document.createElement("li");
+                li.textContent = tasksText;
+
+                let deletebtn = document.createElement("button");
+                deletebtn.textContent ="X";
+                
+                deletebtn.addEventListener("click",function(){
+                    tasks.splice(index,1);
+
+                    localStorage.setItem("mytask",JSON.stringify(tasks));
+                    rendertask();
+                });
+                li.appendChild(deleteBtn);
+                listContainer.appendChild(li);
+            })
+        }
+        rendertask();
+        form.addEventListener("submit",function(event){
+            event.preventDefault(); //stop page refresh 
+           let newTask = input.value.trim();
+            if (newTask === "") return; // Don't add empty tasks
+
+            // Add to our array
+            tasks.push(newTask);
+
+            // Save updated array to localStorage
+            localStorage.setItem("myTasks", JSON.stringify(tasks));
+
+            // Re-render the screen to show the new task
+            renderTasks();
+
+            // Clear the input box
+            input.value = ""; 
+        })
+        // let todos = JSON.parse(localStorage.getItem(""))
+        // let count = Number(localStorage.getItem("count"))||0;
+        // let display =document.querySelector("#count");
+        // let button = document.querySelector("#increase");
+
+        // display.textContent = count;
+        // button.addEventListener("click",function(){
+        //     count++;
+        //     display.textContent = count;
+        //     localStorage.setItem("count",count);
+        // })
+        // let gagan = document.querySelector("#gagan");
+        // let user = {
+        //     name:"gagan",
+        //     age:22
+        // };
+        // //storing the object
+        // localStorage.setItem("user",JSON.stringify(user));
+        // //retrive
+        // let storedUser = JSON.parse(localStorage.getItem("user"));
+        // gagan.textContent =  `this is gagan ${storedUser.age} is than fuck around`
+    </script>
+</body>
+</html>

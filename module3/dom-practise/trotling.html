@@ -1,0 +1,101 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Throttle Scroll Example</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        .box1 {
+            background-color: lightblue;
+        }
+
+        .box2 {
+            background-color: lightgreen;
+        }
+
+        .box3 {
+            background-color: lightcoral;
+        }
+
+        .box4 {
+            background-color: lightyellow;
+        }
+
+        .box5 {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box box1">Section 1</div>
+    <div class="box box2">Section 2</div>
+    <div class="box box3">Section 3</div>
+    <div class="box box4">Section 4</div>
+    <div class="box box5">Section 5</div>
+
+
+    <script>
+      
+        // Reusable throttle function
+         let lastTime = 0;
+        function handleScroll() {
+            let currentTime = Date.now();
+            if (currentTime - lastTime >= 1000) {
+                console.log("Scrolling");
+                lastTime = currentTime;
+            }
+        }
+
+        window.addEventListener("scroll", handleScroll);
+
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function trottle(callback,delay){
+            let lasttime = 0;
+            return function (){
+                let currentime = Date.now();
+                if(currentime -lasttime >= delay){
+                    callback();
+                    lasttime = currentime;
+                }
+            }
+        }
+        function handlescroll(){
+            console.log("scrolling");
+        }
+        const throttlescrol = trottle(handlescroll,1000);
+        window.addEventListener("scroll",throttlescrol);
+    </script>
+</body>
+</html> -->
+

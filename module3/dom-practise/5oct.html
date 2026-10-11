@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!-- <h1 id="heading"> gagan meshram</h1>
+  <form id="myform">
+    <input id="usernmainput" type=""text>
+    <button id="submit">submit</button>
+  </form> -->
+  <!-- <div id="outerdiv">
+     <div id="innerdiv">
+      <button id="my-button">click</button>
+     </div>
+  </div> -->
+  <!-- <div id="outerdiv">
+    <div id="innerdiv">
+       <button id="my-button">click me</button>
+    </div>
+  </div> -->
+<!-- 
+  <ul id="todo-list">
+    <li>buy milk</li>
+    <li>learn JavaScript</li>
+    <li>build and app</li>
+  </ul> -->
+  <form id="gagan">
+  <input id="gag1" type="text" placeholder="Type something...">
+  <button id="but1">click here</button>
+</form>
+
+<!-- Optional: a place to see them display -->
+<ul id="displayList"></ul>
+
+<script>
+  let form = document.querySelector("#gagan");
+  let input = document.querySelector("#gag1");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    let userInput = input.value.trim();
+
+    if (userInput === "") return;
+
+    // 1. Get existing items from localStorage, or start with an empty array ([]) if it's empty
+    let savedItems = JSON.parse(sessionStorage.getItem("myList")) || [];
+
+    // 2. Push the new user input into the array
+    savedItems.push(userInput);
+
+    // 3. Convert the array to a string and save it back to localStorage
+    sessionStorage.setItem("myList", JSON.stringify(savedItems));
+
+    console.log("Current list of items:", savedItems);
+
+    // Clear the input box for the next entry
+    input.value = "";
+  });
+//    let todolist = document.querySelector("#todo-list");
+//    todolist.addEventListener("click",function(event){
+//   if (event.target.tagName === "LI") {
+//       console.log("You clicked on item: " + event.target.textContent);
+//     }
+// event.target.style.textDecoration = "line-through";
+//    })
+  //  let outerdiv = document.querySelector("#outerdiv");
+  //  let innerdiv = document.querySelector("#innerdiv");
+  //  let button = document.querySelector("#my-button");
+
+  //  outerdiv.addEventListener("click",function(){
+  //   console.log("3. Outer div clicked");
+  //  },true)
+
+  //  innerdiv.addEventListener("click",function(){
+  //   console.log("2.inner div clicked");5
+  //  },true)
+
+  //  button.addEventListener("click", function(){
+  //   console.log("1 target clicked")
+  //  })
+  
+  // let form = document.querySelector("#form");
+  // myform.addEventListener("submit", function(event){
+  //   event.preventDefault();
+  //   let username = usernmainput.value.trim();
+  //   if(username == ""){
+  //     console.log("username required");
+  //     return
+  //   }
+  //   console.log("form submitted" +username);
+  // });
+
+  // let div = document.createElement("div");
+  // let img = document.createElement("img");
+  // let price = document.createElement("p");
+  
+  // img.src = "product.jpg";
+  // img.alt = "product";
+
+  // div.textContent = "iphone";
+  // price.textContent = "$999";
+
+  // div.append(img,title,price);
+  // document.body.append(div)
+// let parent = document.querySelector("#gaga");
+  // parent.insert
+
+  // let div = document.createElement("div");
+  //  div.textContent = "hello javscript";
+  //  document.body.appendChild(div);
+
+
+  // let count = 0;
+
+  // let button = document.querySelector("#increase");
+  // let display = document.querySelector("#count");
+
+  // let div = document.createElement("div");
+  //  button.addEventListener("click", function() {
+  //   count++;
+  //   display.textContent = count;
+  //  });
+  
+    // let form = document.querySelector("#form");
+    // form.addEventListener("submit",function(event){
+    //   event.preventDefault();
+    //   console.log("form handled by javascript");
+    // });
+    // let parent=document.querySelector("#gag");
+    // parent.addEventListener("click", function(event){
+    //   console.log(event.target);
+    //   console.log(event.currentTarget);
+    // })
+      // let button = document.querySelector("#gag");
+      // button.addEventListener("click",function(event){
+      //   console.log(event);
+      //   console.log(event.target);
+      // }) 
+   
+      // let button =document.querySelector("#gag");
+      // let messagebox =document.querySelector("#message");
+      // function hanndle(){
+     
+      // messagebox.textContent = "heeloo world";
+      // console.log("Button was clicked using a separate function!");
+      // }
+      // button.addEventListener("click",hanndle)
+
+      // let element = document.querySelector(".box");
+      // element.classList.add("active");
+      // console.log(element.classList.contains("active"));
+      // let title = document.querySelector("#title");
+      // let btn = document.querySelector("#btn");
+      
+      // function handleregularclick(){
+      //   title.textContent = "changed by a regular function";
+      // }
+
+      // title.textContent = "hello javascript";
+      // btn.addEventListener("click", handleregularclick);
+      // let div = document.querySelector("#myDiv");
+      // console.log(div.textContent);
+      // div.innerHTML = "Hello <b>JavaScript</b>";
+
+      // let image = document.querySelector("#photo");
+     </script>
+</body>
+</html>
+<!-- Use textContent 90% of the time when you are 
+just updating regular words, sentences, or numbers. It's safer.
+
+Use innerHTML only when you actually need to inject 
+structural HTML tags (like adding a list item or formatting
+ text with bold/italic tags) via JavaScript. -->
+ 
+
+ <!-- 
+click
+input
+change
+submit
+keydown
+keyup
+mouseover
+mouseout
+focus
+blur -->

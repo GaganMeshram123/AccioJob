@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>themne toggle</title>
+    <style>
+           .dark {
+            background-color: beige;
+            color: white;
+        }
+
+        .light {
+            background-color: black;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <select class="theme">
+        <option value="dark">dark</option>
+        <option value="light">light</option>
+    </select>
+
+    <script>
+        let theme = document.querySelector(".theme");
+        let body = document.querySelector("body");
+        body.className ="light";
+        theme.addEventListener("change",function(event){
+            let classname = event.target.value;
+            body.className = classname;
+        })
+    </script>
+</body>
+</html>

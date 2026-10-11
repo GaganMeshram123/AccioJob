@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> fetch the api </title>
+</head>
+
+<body>
+
+    <script>
+        async function bjpindia() {
+            try {
+                const responce = await fetch("https://jsonplaceholder.typicode.com/users");
+                const datas = await responce.json();
+                console.log(datas[0]);
+
+                // let container = document.createElement("div");
+
+
+                // datas.forEach(data => {
+                //     console.log(data)
+                    
+                // });
+
+                // document.body.append(container)
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+        bjpindia();
+    </script>
+</body>
+
+</html>
+<!-- // https://jsonplaceholder.typicode.com/users
+
+// async function gagan(){
+//   try { 
+//     let responce = await fetch("https://jsonplaceholder.typicode.com/users");
+//     let data = await responce.json();
+//     console.log(data);
+// }
+// catch(error){
+//     console.log(error);
+// }
+// }
+// gagan(); -->

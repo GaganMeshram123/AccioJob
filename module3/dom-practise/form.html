@@ -1,0 +1,144 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <form id="gagan1">
+        <label for="gagan2">Name</label>
+        <input placeholder="name" id="gagan2">
+        
+        <label for="gagan3">email</label>
+        <input type="email" placeholder="email" id="gagan3">
+
+        <label for="gagan4">password</label>
+        <input type="password" placeholder="password" id="gagan4">
+        
+        <button id="gagan5">submit</button>
+    </form>
+    <script>
+        
+       
+let gagan1 = document.querySelector("#gagan1");
+let gagan2 = document.querySelector("#gagan2");
+let gagan3 = document.querySelector("#gagan3");
+let gagan4 = document.querySelector("#gagan4");
+
+gagan1.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let userdata = {
+        name: gagan2.value,
+        email: gagan3.value
+    };
+
+    // Get previous users, or create an empty array
+    let user = JSON.parse(localStorage.getItem("user")) || [];
+
+    // Add the new user
+    user.push(userdata);
+
+    // Save all users
+    localStorage.setItem("user", JSON.stringify(user));
+
+    console.log(user);
+
+    // Clear the form
+    gagan1.reset();
+
+    alert("User saved successfully!");
+
+});
+     
+    </script>
+ </body>
+ </html>
+
+
+
+<!-- 
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Local Storage</title>
+</head>
+<body>
+
+    <h2>User Registration Form</h2>
+
+    <form id="gagan1">
+        <label for="gagan2">Name</label>
+        <input type="text" placeholder="Enter name" id="gagan2" required>
+        <br><br>
+
+        <label for="gagan3">Email</label>
+        <input type="email" placeholder="Enter email" id="gagan3" required>
+        <br><br>
+
+        <label for="gagan4">Password</label>
+        <input type="password" placeholder="Enter password" id="gagan4" required>
+        <br><br>
+
+        <button type="submit" id="gagan5">Submit</button>
+    </form>
+
+    <h3>Saved Users</h3>
+    <ul id="userList"></ul>
+
+    <script>
+        // Step 1: Select HTML elements
+        let gagan1 = document.querySelector("#gagan1");
+        let gagan2 = document.querySelector("#gagan2");
+        let gagan3 = document.querySelector("#gagan3");
+        let gagan4 = document.querySelector("#gagan4");
+        let userList = document.querySelector("#userList");
+
+        // Step 2: Get previously saved users
+        let users = JSON.parse(localStorage.getItem("user")) || [];
+
+        // Step 3: Display saved users
+        function displayUsers() {
+            userList.innerHTML = "";
+
+            users.forEach(function(user) {
+                let li = document.createElement("li");
+                li.textContent = user.name + " - " + user.email;
+                userList.appendChild(li);
+            });
+        }
+
+        displayUsers();
+
+        // Step 4: Handle form submission
+        gagan1.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Create a new user object
+            let userdata = {
+                name: gagan2.value.trim(),
+                email: gagan3.value.trim()
+            };
+
+            // Add new user to the array
+            users.push(userdata);
+
+            // Save updated array to localStorage
+            localStorage.setItem("user", JSON.stringify(users));
+
+            // Update the list on the webpage
+            displayUsers();
+
+            // Clear the form
+            gagan1.reset();
+
+            alert("User saved successfully!");
+        });
+    </script>
+
+</body>
+</html> -->
