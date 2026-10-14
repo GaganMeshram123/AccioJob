@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Products</h1>
+
+    <div id="products">
+
+        <div class="product">
+            <div class="product-name">Apple</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Banana</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Mango</div>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <h2 id="message"></h2>
+    <p>Cart Count: <span id="cart-count">0</span></p>
+    <script>
+       let products = document.querySelector("#products");
+       products.addEventListener("click",function(){
+        if(event.target.matches(".add-cart")){
+        let text = event.target.previousElementSibling.textcontent;
+        cart.append(text);
+        }
+         
+       })
+    </script>
+</body>
+</html>

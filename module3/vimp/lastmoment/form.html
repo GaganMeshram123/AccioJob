@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form id="formid">
+        <label id="labelid">name</label>
+        <input id="nameinput">
+
+        <label id="labelemail">email</label>
+        <input id="emailinput">
+
+        <label id="labelpassword">password</label>
+        <input id="passwordinput">
+
+        <button id="btn">submit</button>
+    </form>
+    <div id="gagan"></div>
+    <script>
+        let formid = document.querySelector("#formid");
+        let nameinput = document.querySelector("#nameinput");
+        let passwordinput = document.querySelector("#passwordinput");
+        let emailinput = document.querySelector("#emailinput");
+        let presenting = document.getElementById("gagan");
+        let btn = document.querySelector("#btn")
+        formid.addEventListener("submit",function(){
+                event.preventDefault();
+            let nam = nameinput.value;
+            let ema = emailinput.value;
+
+            presenting.append(nam,ema);
+            document.body.append(presenting);
+
+        })
+
+    </script>
+</body>
+</html>

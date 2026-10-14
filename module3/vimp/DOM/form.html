@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <h1>student details</h1>
+    <form id="formdata">
+        <h1>name</h1>
+        <input id="inputdata">
+            
+        <h1>marks</h1>
+        <input id="marks">
+        <button id="buttondata"> click to submit</button>
+    </form>
+    <script>
+        let inputdata = document.querySelector("#inputdata");
+        let buttondata = document.querySelector("#marks");
+        let formdata = document.querySelector("#formdata");
+
+        formdata.addEventListener("submit",function(event){
+            event.preventDefault();
+            let indata = inputdata.value;
+            let butdata = buttondata.value;
+            localStorage.setItem("name",indata);
+            localStorage.setItem("marks",butdata)
+            
+            let removebutton = 
+            localStorage.getItem
+        })
+        
+    </script>
+</body>
+</html>

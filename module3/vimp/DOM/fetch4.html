@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lets go with four</title>
+</head>
+  <style>
+    #container{
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+  </style>
+<body>
+    <div id="container"></div>
+    <script>
+        async function done() {
+            let gagan = await fetch("https://dummyjson.com/products");
+            let gag2 = await gagan.json();
+            let fullon = gag2.products
+            let container = document.getElementById("container");
+            
+            
+            let slicedat = fullon.slice(0, 10);
+             slicedat.forEach(val => {
+                // console.log(val);
+
+                let cringe = document.createElement("div")
+                cringe.className = "products";
+
+                cringe.innerHTML = `
+                <h1>${val.title}</h1>
+                <p>${val.description} </p>
+                <img src="${val.thumbnail}" alt="${val.title}">
+                ` 
+                container.append(cringe);
+            });
+            // <img src="${val.thumbnail}" alt="${val.title}">
+        }
+        done()
+    </script>
+</body>
+
+</html>

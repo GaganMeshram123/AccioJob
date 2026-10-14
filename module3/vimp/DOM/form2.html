@@ -1,0 +1,62 @@
+<!-- create a from with name email and password  -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+ </head>
+ <body>
+    <form>
+        <label for="name"> Name</label><br>
+        <input id="name" type="text" placeHolder="enter your name here" required><br>
+
+        <label for="email">Email</label><br>
+        <input id="email" type="email" placeholder="enter your email here" required><br>
+
+        <label for="password">Password</label><br>
+        <input id="password" type="password"><br>
+        <button type="submit">Submit</button><br>
+    </form>
+          <ol id="users"></ol>
+    <script>
+        let form = document.querySelector("form");
+        let nameinput = document.querySelector("#name");
+        let emailinput = document.querySelector("#email");
+        let passwordinput = document.querySelector("#password");
+        
+        form.addEventListener("submit",(event)=>{
+            event.preventDefault();
+            let namespam = document.createElement("span");
+            namespam.textContent = nameinput.value;
+
+           let emailspan = document.createElement("span");
+           emailspan.textContent = emailinput.value;
+            
+            let deletebutton = document.createElement("button");
+            deletebutton.textContent = "remove"
+
+            deletebutton.addEventListener("click",function(){
+                list.remove();
+            })
+            let editbutton = document.createElement("button");
+            editbutton.textContent = "edit"
+
+            editbutton.addEventListener("click",function(){
+                let newname = prompt("enter name");
+                let newemail = prompt("enter email");
+
+                namespam.textContent = newname;
+                emailspan.textContent = newemail;
+            })
+            
+            let list = document.createElement("li");
+            list.append(namespam,emailspan,editbutton,deletebutton);
+            users.append(list);
+           form.reset();
+
+        })
+
+    </script>
+ </body>
+ </html>

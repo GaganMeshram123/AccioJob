@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch 3</title>
+</head>
+<style>
+    #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+</style>
+
+<body>
+    <div id="container"></div>
+    <script>
+        async function gagan() {
+            try {
+                let gag = await fetch("https://jsonplaceholder.typicode.com/posts");
+                let gag1 = await gag.json();
+                let container = document.getElementById("container");
+                gag1.forEach(val => {
+                    console.log(val);
+
+                    let cringe = document.createElement("div");
+                    cringe.className = "products";//just giving the names 
+                    cringe.innerHTML = `
+
+                     <p>Post: ${val.body}</p>
+                     <p>Post ID: ${val.id}</p>
+                    `
+
+                    container.append(cringe);
+                });
+
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }
+        gagan()
+    </script>
+</body>
+
+</html>

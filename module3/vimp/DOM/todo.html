@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+</head>
+<body>
+    <input id="gagan" type="password">
+    <button id="submit">click here</button>
+    <h1 id="output"></h1>
+    <script>
+       let inputdata = document.querySelector("#gagan");
+       let buttondata = document.querySelector("#submit");
+       let output = document.querySelector("#output");
+       
+       buttondata.addEventListener("click" , function(event){
+        event.preventDefault();
+
+        let userinput = inputdata.value;
+
+        let container = document.createElement("p");
+        container.textContent = userinput;
+
+
+        output.appendChild(container)
+        let editbutton = document.createElement("button");
+        buttondata.textContent = "edit";
+
+        container.appendChild(buttondata);
+
+         let removebutton =document.createElement("button");
+        removebutton.textContent = "remove";
+
+        container.appendChild(removebutton);
+
+        removebutton.addEventListener("click",function(){
+            container.remove();
+        })
+           
+        inputdata.value = "";  
+    })
+    </script>
+    
+</body>
+</html>

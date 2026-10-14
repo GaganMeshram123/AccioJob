@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new one</title>
+</head>
+<style>
+  #container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px;
+  }
+</style>
+<body>
+    <div id="container"></div>
+    <script>
+        //asach asnaar 
+        
+        async function gagan() {
+            try {
+                let gaaag = await fetch("https://dummyjson.com/products");
+               
+                let response = await gaaag.json();
+                let data = response.products;
+                
+                let container = document.getElementById("container");
+                    
+                data.forEach(val => {
+                   console.log(val);
+
+                    let cringe = document.createElement("div");
+                    cringe.className = "product";
+                   cringe.innerHTML = `
+                        <h2>${val.title}</h2>
+                        <img src="${val.thumbnail}" alt="${val.title}">
+                        <p>Price: $${val.price}</p>
+                        <p>Rating: ${val.rating}</p>
+                    `;
+
+                    container.append(cringe)  
+                });
+
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }
+        gagan();
+    </script>
+</body>
+
+</html>

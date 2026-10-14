@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+</head>
+
+<body>
+    <div id="datainput"></div>
+    <script>
+        async function responce()
+        {
+           try{ 
+            let data = await fetch("https://dummyjson.com/products");
+            let res = await data.json();
+            let material = res.products;
+            //console.log(material[0]);
+ 
+
+            let gag = document.getElementById("datainput");
+            material.forEach(val => {
+                console.log(val.images);
+                let bjp = val.images.toString();
+
+                let cringe = document.createElement("span");
+                cringe.className = "lavda";
+                cringe.innerHTML = `
+                 <img src=${bjp}></img>
+                 
+                 `
+               gag.append(cringe)
+            })
+        }
+            catch(error){
+             console.log(error);
+            }
+        }
+        responce();
+    </script>
+</body>
+</html>

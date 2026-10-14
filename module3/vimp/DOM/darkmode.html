@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1 id="heading">Light Mode</h1>
+
+    <button id="mode">Change Mode</button>
+
+    <script>
+        let mode = document.querySelector("#mode");
+        let heading = document.querySelector("#heading");
+
+        let isDark = false;
+
+        mode.addEventListener("click", function() {
+
+            if (isDark == false) {
+                document.body.style.backgroundColor = "black";
+                heading.textContent = "Dark Mode";
+                isDark = true;
+            } else {
+                document.body.style.backgroundColor = "white";
+                heading.textContent = "Light Mode";
+                isDark = false;
+            }
+
+        });
+    </script>
+
+</body>
+</html>

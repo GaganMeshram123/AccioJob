@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input dhekena hai bss</title>
+</head>
+<body>
+    <input id="gagan">
+    <button id="btn">click here</button>
+    <script>
+        let gagan =document.querySelector("#gagan");
+        let btn = document.querySelector("#btn");
+
+        btn.addEventListener("click",function(event){
+            let valuinput = gagan.value;
+            
+            let doc = document.createElement("p");
+            doc.append(valuinput);
+
+            document.body.append(doc);
+            doc.reset() 
+        })
+    </script>
+</body>
+</html>

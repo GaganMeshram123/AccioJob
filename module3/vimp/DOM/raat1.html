@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do</title>
+</head>
+<style>
+
+</style>
+<body>
+    <form id="bjp">
+         <label id="namelabel">Name</label>
+         <input id="nameinput" placeholder="name">
+
+         <label id="emaillabel">Email</label>
+         <input id="emailinput" placeholder="email">
+
+         <label id="password">password</label>
+         <input id="passwordinput" placeholder="password" type="password">
+         
+         <button id="sub">submit</button>
+    </form>
+    <script>
+        let bjp = document.querySelector("#bjp");
+        let nameinput = document.querySelector("#nameinput");
+        let emailinput =document.querySelector("#emailinput");
+        let password = document.querySelector("#passwordinput");
+
+        bjp.addEventListener("submit",function(event){
+            event.preventDefault();
+            let nam = document.createElement("span");
+            nam.textContent = nameinput.value;
+            
+            let ema = document.createElement("span")
+            ema.textContent = emailinput.value;
+            
+            let deltebtn = document.createElement("button");
+            deltebtn.textContent = "delete";
+
+            deltebtn.addEventListener("click", function(event){
+                cringe.remove();
+            })
+
+            let editbutton = document.createElement("button");
+            editbutton.textContent = "editbutton";
+
+            editbutton.addEventListener("click",function(){
+               let namespace = prompt("enter name");
+               let emailspace = prompt("enter email");
+
+               nam.textContent = namespace;
+               ema.textContent = emailspace;
+
+            })
+            let cringe = document.createElement("p");
+            cringe.className = "pcringee";
+            cringe.append(nam,ema,deltebtn,editbutton);
+            document.body.append(cringe);
+        })
+    </script>
+</body>
+</html>

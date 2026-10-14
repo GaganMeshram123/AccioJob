@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+    <input id="taskInput" type="text">
+    <button id="addBtn">Add Task</button>
+
+    <div id="output"></div>
+
+    <script>
+        let input = document.querySelector("#taskInput");
+        let addBtn = document.querySelector("#addBtn");
+        let output = document.querySelector("#output");
+
+        // Add a task
+        addBtn.addEventListener("click", function() {
+            let task = document.createElement("p");
+            task.textContent = input.value;
+
+            let removeBtn = document.createElement("button");
+            removeBtn.textContent = "Remove";
+            removeBtn.className = "remove";
+
+            task.appendChild(removeBtn);
+            output.appendChild(task);
+
+            input.value = "";
+        });
+
+        // Event delegation: one listener for all Remove buttons
+        output.addEventListener("click", function(event) {
+            if (event.target.className === "remove") {
+                event.target.parentElement.remove();
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+//rather than putting the eventlistener on the child class use it on the parent class
